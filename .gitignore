@@ -1,9 +1,14 @@
-target/
-h2/
+HELP.md
+/target/
 history_log.txt
-testCases_log.txt
-restructure_tmp/
-restructured_labs/
-.revature/tmp
-.vscode
-.idea/
+
+
+### VS Code ###
+.vscode/
+
+### chromedriver and browser ###
+google-chrome-stable_current_amd64.deb
+microsoft-edge-stable_123.0.2420.97-1_amd64.deb
+LATEST_RELEASE
+LICENSE.chromedriver
+driver
