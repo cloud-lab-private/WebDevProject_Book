@@ -37,7 +37,7 @@ public class SeleniumTest {
     WebDriverManager.chromedriver().setup(); // Automatically manages driver version
 
     // Get file
-    File file = new File("src/main/Callbacks.html");
+    File file = new File("src/main/java/com/revature/index.html");
     String path = "file://" + file.getAbsolutePath();
 
     // Create a new ChromeDriver instance
@@ -47,7 +47,8 @@ public class SeleniumTest {
     wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
     // Open the HTML file
     webDriver.get(path);
-}
+    }
+    
     @AfterEach
     public void tearDown() {
         if (webDriver != null) {
