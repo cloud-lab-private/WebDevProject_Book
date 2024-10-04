@@ -32,8 +32,8 @@ public class SeleniumTest {
     private WebDriver webDriver;
     private WebDriverWait wait;
 
- @BeforeEach
- public void setUp() {
+@BeforeEach
+public void setUp() {
     WebDriverManager.chromedriver().setup(); // Automatically manages driver version
 
     // Get file
