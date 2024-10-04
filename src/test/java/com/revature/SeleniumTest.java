@@ -32,22 +32,22 @@ public class SeleniumTest {
     private WebDriver webDriver;
     private WebDriverWait wait;
 
-    @BeforeEach
-    public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "driver/chromedriver"); // linux_64
+ @BeforeEach
+ public void setUp() {
+    WebDriverManager.chromedriver().setup(); // Automatically manages driver version
 
-        File file = new File("src/main/java/com/revature/index.html");
-        String path = "file://" + file.getAbsolutePath();
+    // Get file
+    File file = new File("src/main/Callbacks.html");
+    String path = "file://" + file.getAbsolutePath();
 
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("headless");
-        webDriver = new ChromeDriver(options);
-        wait = new WebDriverWait(webDriver, Duration.ofSeconds(30));
-        webDriver.get(path);
-        options.setPageLoadStrategy(PageLoadStrategy.EAGER);
-
-    }
-
+    // Create a new ChromeDriver instance
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("headless");
+    webDriver = new ChromeDriver(options);
+    wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+    // Open the HTML file
+    webDriver.get(path);
+}
     @AfterEach
     public void tearDown() {
         if (webDriver != null) {
