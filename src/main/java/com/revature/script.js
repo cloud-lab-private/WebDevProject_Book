@@ -1,5 +1,60 @@
-
 // add variable references and event listeners here!
+
+/**
+ * Searches for books using the Google Books API based on the given query and type.
+ *
+ * @async
+ * @param {string} query - The search term (title, ISBN, or author name).
+ * @param {string} type - The type of search to perform (e.g., 'title', 'isbn', 'author').
+ * @returns {Promise<Array>} A promise that resolves to an array of book objects.
+ *
+ * @description
+ * This function allows users to search for books using the Google Books API.
+ * It performs the following actions:
+ * 1. Uses the query and type parameters to construct the API request. Make sure to include a query parameter to limit the results to a maximum of 10 books.
+ * 2. Fetches data from the Google Books API.
+ * 3. Processes the API response to extract relevant book information.
+ * 4. Returns an array of book objects with the following properties:
+ *    - title: The book's title
+ *    - author_name: The name of the author(s)
+ *    - isbn: The book's ISBN
+ *    - cover_i: Cover image
+ *    - ebook_access: Information about ebook availability
+ *    - first_publish_year: Year of first publication
+ *    - ratings_sortable: Book ratings information
+ * 
+ * Hint: Regarding steps 3 and 4, consider using the Array object's map() method and assign the above properties as keys. Extract the correct values from the JSON using dot notation. Print your results often for debugging!
+ * 
+ */
+async function searchBooks(query, type) {
+}
+
+/**
+* Takes in a list of books and updates the UI accordingly.
+*
+* @param {Array} books - An array of book objects to be displayed.
+*
+* @description
+* This function takes an array of book objects and creates a visual representation
+* of each book as a list item (<li>) within an unordered list (<ul>). 
+* It performs the following actions:
+* 
+* 1. Targets the unordered list with the id 'book-list'.
+* 2. Clears the inner HTML of the list.
+* 3. For each book in the 'books' array, creates an <li> element containing:
+*    - The book's title within an element that has a class of `title-element`
+*    - The book's author within an element that has a class of `author-element`
+*    - The book's cover image within an element that has a class of `cover-element`
+*    - The book’s rating within an element that has a class of `rating-element`
+*    - The book’s e-book access value within an element that has a class of `ebook-element`
+*    Note: The order and specific layout of this information is flexible 
+*    and determined by the developer.
+* 4. Appends each created <li> element to the 'book-list' <ul>.
+* 5. Ensures that the 'selected-book' element is not visible.
+*/
+function displayBookList(books) {
+  
+}
 
 /**
  * Handles the search form submission and updates the UI with search results.
@@ -23,62 +78,6 @@ async function handleSearch(event) {
 
 }
 
-
-/**
- * Searches for books using the Open Library API based on the given query and type.
- *
- * @async
- * @param {string} query - The search term (title, ISBN, or author name).
- * @param {string} type - The type of search to perform (e.g., 'title', 'isbn', 'author').
- * @returns {Promise<Array>} A promise that resolves to an array of book objects.
- *
- * @description
- * This function allows users to search for books using the Open Library API.
- * It performs the following actions:
- * 1. Uses the query and type parameters to construct the API request.
- * 2. Fetches data from the Open Library API.
- * 3. Processes the API response to extract relevant book information.
- * 4. Limits the results to a maximum of 10 books.
- * 5. Returns an array of book objects with the following properties:
- *    - title: The book's title
- *    - author_name: The name of the author(s)
- *    - isbn: The book's ISBN
- *    - cover_i: Cover image identifier
- *    - ebook_access: Information about ebook availability
- *    - first_publish_year: Year of first publication
- *    - ratings_sortable: Book ratings information
- * 
- * 
- */
-async function searchBooks(query, type) {
-
-}
-
-/**
-* Takes in a list of books and updates the UI accordingly.
-*
-* @param {Array} books - An array of book objects to be displayed.
-*
-* @description
-* This function takes an array of book objects and creates a visual representation
-* of each book as a list item (<li>) within an unordered list (<ul>). 
-* It performs the following actions:
-* 
-* 1. Targets the unordered list with the id 'book-list'.
-* 2. Clears the inner HTML of the list.
-* 3. For each book in the 'books' array, creates an <li> element containing:
-*    - The book's title within an element that has a class of `title-element`
-*    - The book's cover image within an element that has a class of `cover-element`
-*    - The book’s rating within an element that has a class of `rating-element`
-*    - The book’s e-book access value within an element that has a class of `ebook-element`
-*    Note: The order and specific layout of this information is flexible 
-*    and determined by the developer.
-* 4. Appends each created <li> element to the 'book-list' <ul>.
-* 5. Ensures that the 'selected-book' element is not visible.
-*/
-function displayBookList(books) {
-
-}
 
 /**
  * Displays detailed information about a single book when it's clicked.
