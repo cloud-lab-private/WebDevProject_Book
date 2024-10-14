@@ -70,7 +70,7 @@ function displayBookList(books) {
  * 2. Retrieves the search query from the textbox input.
  * 3. Gets the selected search type (title, ISBN, or author) from the 'search-type' select element.
  * 4. Calls the searchBooks() function with the query and search type.
- * 5. Waits for the searchBooks() function to return results from the Open Library API.
+ * 5. Waits for the searchBooks() function to return results from the Google Books API.
  * 6. Passes the returned book data to the displayBookList() function to update the UI.
  * 7. Handles any errors that may occur during the search process.
  */
