@@ -55,8 +55,8 @@ public class SeleniumTest {
         }
     }
 
-    @Test
     @SuppressWarnings("rawtypes")
+    @Test
     public void testSearchBooksSucceeds() {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) webDriver;
         wait.until(
